@@ -1,0 +1,8 @@
+{% extends "sports/base.html" %}
+{% block content %}
+  {% for item in cricket %}
+    <h1>{{ item.home_team }} vs {{ item.away_team }}</h1>
+    <h2>{{ item.date }}</h2>
+    <h3>{{ item.time }}</h3>
+  {% endfor %}
+{% endblock content %}

@@ -10,7 +10,6 @@ def rugby(request):
     context = {
         "rugby": rugby_dict
     }
-    print(rugby_dict)
     return render(request, 'sports/rugby.html', context = context)
 
 def cricket(request):

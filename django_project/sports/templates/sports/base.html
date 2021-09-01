@@ -23,10 +23,11 @@
           <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarToggle">
-            <div class="navbar-nav mr-auto">
+            <!-- <div class="navbar-nav mr-auto">
               <a class="nav-item nav-link" href="{% url 'sports-rugby' %}">Rugby</a>
               <a class="nav-item nav-link" href="{% url 'sports-cricket' %}">Cricket</a>
-            </div>
+              <a class="nav-item nav-link" href="{% url 'sports-cars' %}">Supercars</a>
+            </div> -->
             <!-- Navbar Right Side -->
           </div>
         </div>
@@ -38,19 +39,18 @@
           <br><br>
           {% block content %}{% endblock %}
         </div>
-        <!-- <div class="col-md-4">
+        <div class="col-md-4">
           <div class="content-section">
-            <h3>Our Sidebar</h3>
-            <p class='text-muted'>You can put any information here you'd like.
+            <h3>Sports</h3>
+            <p class='text-muted'>Let me know if there's any I've missed
               <ul class="list-group">
-                <li class="list-group-item list-group-item-light">Latest Posts</li>
-                <li class="list-group-item list-group-item-light">Announcements</li>
-                <li class="list-group-item list-group-item-light">Calendars</li>
-                <li class="list-group-item list-group-item-light">etc</li>
+                <li class="list-group-item list-group-item-light"><a href="/rugby">Rugby</a></li>
+                <li class="list-group-item list-group-item-light"><a href="/cricket">Cricket</a></li>
+                <li class="list-group-item list-group-item-light"><a href="/supercars">Supercars</a></li>
               </ul>
             </p>
           </div>
-        </div> -->
+        </div>
       </div>
     </main>
 

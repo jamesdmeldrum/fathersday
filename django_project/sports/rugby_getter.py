@@ -17,10 +17,6 @@ def get_next_rugby(rugby_url):
             details = line.find("div", class_="fixture__venue-time")
             details = format_rugby_details(details.text)
 
-            print(home_team)
-            print(away_team)
-            print(details[0], details[1])
-
             dict = {
                 "home_team": home_team,
                 "away_team": away_team,

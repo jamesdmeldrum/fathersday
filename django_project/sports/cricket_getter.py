@@ -18,12 +18,10 @@ def get_next_cricket(cricket_url):
         team_1 = teams.find_all("p", class_="name")[0].text
         team_2 = teams.find_all("p", class_="name")[1].text
 
-        print(team_1)
-        print(team_2)
+
         date = format_cricket_date(date)
         time = format_cricket_time(time)
-        print(date, time)
-
+        
         dict = {
             "home_team": team_1,
             "away_team": team_2,

@@ -1,12 +1,17 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Happy Father's Day!</title>
-  </head>
-  <body>
-    <h1>Happy Father's Day, Dad!</h1>
-    <p> <a href="/rugby">Rugby link</a></p>
-    <p><a href="/cricket">Cricket link</a></p>
-  </body>
-</html>
+{% extends "sports/base.html" %}
+{% block content %}
+    <h1>
+      Happy Father's Day, Dad!
+    </h1>
+    <br>
+    <p>
+      I didn't know what to get you so I figured I would make you something
+    </p>
+    <p>
+      Here's a simple website which scrapes some info off the web and tells you when the next match for a given sport is.
+    </p>
+    <p>
+      The different sports are along the top bar of the website. Let me know if there's any more you want and I can add them.
+    </p>
+
+{% endblock %}

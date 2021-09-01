@@ -1,0 +1,10 @@
+{% extends "sports/base.html" %}
+{% block content %}
+<h1>
+  Next Supercars Event
+</h1>
+{% for item in cars %}
+  <h3>{{ item.Event }}</h3>
+  <h4>{{ item.Month }} {{ item.Dates }}</h4>
+{% endfor %}
+{% endblock %}

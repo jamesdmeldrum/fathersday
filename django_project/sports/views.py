@@ -19,6 +19,7 @@ def cricket(request):
         "cricket": cricket_dict,
         "story": story_dict
     }
+    print(context)
     return render(request, 'sports/cricket.html', context = context)
 
 def supercars(request):

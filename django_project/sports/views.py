@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from . import rugby_getter, cricket_getter, supercars_getter, cricket_top_story_getter
+from . import rugby_getter, cricket_getter, supercars_getter, cricket_top_stories_getter
 
 def home(request):
     return render(request, 'sports/homepage.html')

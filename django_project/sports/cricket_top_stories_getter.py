@@ -12,7 +12,7 @@ def main():
     soup = BeautifulSoup(page.content, "html.parser")
     x = soup.find_all("h2")[0]
     story_title = x.text
-    story_link = "cricket.com.au" + x.find("a").get('href')
+    story_link = "https://cricket.com.au" + x.find("a").get('href')
 
     dict = {
         "Title": story_title,

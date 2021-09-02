@@ -14,7 +14,7 @@ def rugby(request):
 
 def cricket(request):
     cricket_dict = [cricket_getter.main()]
-    story_dict = [cricket_top_story_getter.main()]
+    story_dict = [cricket_top_stories_getter.main()]
     context = {
         "cricket": cricket_dict,
         "story": story_dict

@@ -6,4 +6,9 @@
     <h4>{{ item.date }}</h4>
     <h4>{{ item.time }}</h4>
   {% endfor %}
+  <br><br>
+  {% for item in story %}
+    <h3>Top Story Today:</h3>
+    <h4><a href={{ story.link }}>{{ story.title }}</a></h4>
+  {% endfor %}
 {% endblock content %}

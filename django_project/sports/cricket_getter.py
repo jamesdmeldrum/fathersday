@@ -21,7 +21,7 @@ def get_next_cricket(cricket_url):
 
         date = format_cricket_date(date)
         time = format_cricket_time(time)
-        
+
         dict = {
             "home_team": team_1,
             "away_team": team_2,

@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from . import rugby_getter, cricket_getter, supercars_getter
+from . import rugby_getter, cricket_getter, supercars_getter, cricket_top_story_getter
 
 def home(request):
     return render(request, 'sports/homepage.html')
@@ -14,8 +14,10 @@ def rugby(request):
 
 def cricket(request):
     cricket_dict = [cricket_getter.main()]
+    story_dict = [cricket_top_story_getter.main()]
     context = {
-        "cricket": cricket_dict
+        "cricket": cricket_dict,
+        "story": story_dict
     }
     return render(request, 'sports/cricket.html', context = context)
 

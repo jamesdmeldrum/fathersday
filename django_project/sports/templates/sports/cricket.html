@@ -9,6 +9,6 @@
   <br><br>
   {% for item in story %}
     <h3>Top Story Today:</h3>
-    <h4><a href="{{ item.Link }}">{{ item.Title }}</a></h4>
+    <h4><a href="{{ item.Link }}", target="_blank">{{ item.Title }}</a></h4>
   {% endfor %}
 {% endblock content %}

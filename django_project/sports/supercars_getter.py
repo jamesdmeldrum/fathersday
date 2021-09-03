@@ -65,8 +65,8 @@ def match_month(month):
     if month not in full_months:
         for i in range(12):
             if month.lower() == short_months[i].lower():
-                month = full_months[i]
-                return month+1
+                month = full_months[i+1]
+                return month
 
 def get_dt(date):
     month = ''.join(list(date)[0:3])

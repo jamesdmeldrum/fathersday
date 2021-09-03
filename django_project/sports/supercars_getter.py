@@ -65,7 +65,7 @@ def match_month(month):
     if month not in full_months:
         for i in range(12):
             if month.lower() == short_months[i].lower():
-                month = full_months[i+1]
+                month = full_months[i]
                 return month
 
 def get_dt(date):
@@ -80,7 +80,7 @@ def get_dt(date):
 def get_month_int(month):
     short_months = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"]
     for i in range(1,13):
-        if month.lower() == short_months[i]:
+        if month.lower() == short_months[i-1]:
             return i
 
 def correct_output(input):

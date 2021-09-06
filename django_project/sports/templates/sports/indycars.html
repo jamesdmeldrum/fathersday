@@ -1,0 +1,15 @@
+{% extends "sports/base.html" %}
+{% block content %}
+<h1>
+  Next IndyCar Event
+</h1>
+{% for item in cars %}
+  <h3>{{ item.Title }}</h3>
+  <h4>{{ item.Month }} {{ item.Date }} {{ item.Time }}</h4>
+{% endfor %}
+<br><br>
+{% for item in story %}
+  <h3>Top Story Today:</h3>
+  <h4><a href="{{ item.Link }}", target="_blank">{{ item.Title }}</a></h4>
+{% endfor %}
+{% endblock %}

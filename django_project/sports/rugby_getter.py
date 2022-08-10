@@ -22,8 +22,6 @@ def get_next_rugby(rugby_url):
                     "time": time
                 }
 
-                print(dict)
-
                 return dict
 
 
@@ -48,7 +46,11 @@ def format_rugby_time(time):
 
 def main():
     rugby_url = 'https://www.rugbypass.com/internationals/fixtures-results/'
-    return get_next_rugby(rugby_url)
+    returned = get_next_rugby(rugby_url)
+
+    print(returned)
+
+    return returned
 
 if __name__ == "__main__":
     main()

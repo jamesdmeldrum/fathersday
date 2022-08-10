@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 
-def get_next_rugby(rugby_url, printit = False):
+def get_next_rugby(rugby_url):
     page = requests.get(rugby_url)
     soup = BeautifulSoup(page.content, "html.parser")
 
@@ -46,9 +46,9 @@ def format_rugby_time(time):
     return str(hour) + ":" + min
 
 
-def main(printit = False):
+def main():
     rugby_url = 'https://www.rugbypass.com/internationals/fixtures-results/'
-    return get_next_rugby(rugby_url, printit)
+    return get_next_rugby(rugby_url)
 
 if __name__ == "__main__":
-    main(printit = True)
+    main()

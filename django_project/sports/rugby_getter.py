@@ -8,7 +8,7 @@ def get_next_rugby(rugby_url, printit = False):
     x = soup.find_all("div", class_="games-list-item")
 
     for line in x:
-        date = line.find("div", class_="date").text
+        date = line.find("div", class_="date").text.strip()
         matches = line.find_all("div", class_="game")
         for match in matches:
             home_team = match.find("div", class_="team home").text.strip()
@@ -22,7 +22,11 @@ def get_next_rugby(rugby_url, printit = False):
                     "time": time
                 }
 
+                print(dict)
+
                 return dict
+
+
 
 def format_rugby_details(details):
     details = details.split(" - ")

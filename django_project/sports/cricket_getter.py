@@ -1,26 +1,30 @@
 import requests
 from bs4 import BeautifulSoup
 
-def get_next_cricket(cricket_url):
+def get_next_cricket(cricket_url, printit = False):
     page = requests.get(cricket_url)
     soup = BeautifulSoup(page.content, "html.parser")
 
-    x = soup.find_all("div", class_="match-score-block")
+    x = soup.find_all("div", class_="ds-border-b ds-border-line ds-border-r ds-w-1/2")
+
+    if printit == True:
+        print(x)
 
     for a in x:
-        time = a.find("div", class_="status status-hindi")
+        time = a.find("div", class_="ds-truncate ds-w-[90%]")
         date_time = time.text
 
         date = date_time.split(", ")[0:2]
-        time = date_time.split(", ")[2]
-
-        teams = a.find("div", class_="teams")
-        team_1 = teams.find_all("p", class_="name")[0].text
-        team_2 = teams.find_all("p", class_="name")[1].text
-
-
         date = format_cricket_date(date)
-        time = format_cricket_time(time)
+        try:
+            time = date_time.split(", ")[2]
+            time = format_cricket_time(time)
+        except:
+            time = ""
+
+        teams = a.find("div", class_="ds-flex ds-flex-col ds-mt-2 ds-mb-2")
+        team_1 = teams.find_all("p", class_="ds-text-tight-m ds-font-bold ds-capitalize")[0].text
+        team_2 = teams.find_all("p", class_="ds-text-tight-m ds-font-bold ds-capitalize")[1].text
 
         dict = {
             "home_team": team_1,
@@ -28,6 +32,8 @@ def get_next_cricket(cricket_url):
             "date": date,
             "time": time
         }
+
+
 
         return dict
 
@@ -70,10 +76,15 @@ def format_cricket_date(date):
 
     return date[0] + " " + month + " " + dat_num
 
-def main():
+def main(printit=False):
     cricket_url = "https://www.espncricinfo.com/team/australia-2/match-schedule-fixtures"
-    return get_next_cricket(cricket_url)
+    returned = get_next_cricket(cricket_url, printit = True)
+
+    if printit == True:
+        print(returned)
+
+    return returned
 
 
 if __name__ == "__main__":
-    main()
+    main(printit = True)

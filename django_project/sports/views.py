@@ -51,4 +51,4 @@ def indycar(request):
 
 def watchJSON(request):
     fileobject = open("./watchjson.json", 'r').readlines()[0]
-    return HttpResponse(fileobject)
+    return HttpResponse(fileobject, content_type='application/json')

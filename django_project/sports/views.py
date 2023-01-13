@@ -48,3 +48,7 @@ def indycar(request):
         "cars": indy_dict
     }
     return render(request, 'sports/indycars.html', context)
+
+def watchJSON(request):
+    fileobject = open("./watchjson.json", 'r').readlines()[0]
+    return HttpResponse(fileobject)

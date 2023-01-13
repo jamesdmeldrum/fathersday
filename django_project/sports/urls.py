@@ -8,5 +8,5 @@ urlpatterns = [
     path('supercars/', views.supercars, name='sports-cars'),
     path('sailing/', views.sailing, name='sports-sailinggp'),
     path('indycars/', views.indycar, name='sports-indys'),
-    path('watchjson/', views.watchJSON, name='watchjson-file')
+    path('watchjson/', views.watchJSON, name='watchjson-file'),
 ]
